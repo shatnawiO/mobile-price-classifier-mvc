@@ -1,5 +1,6 @@
 import tensorflow as tf
 import joblib
+from pathlib import Path
 
 model = tf.keras.models.load_model(MODELS_DIR / "price_classifier.keras")
 scaler = joblib.load(MODELS_DIR / "scaler.pkl")
