@@ -1,8 +1,9 @@
 import tensorflow as tf
 import joblib
 
-model = tf.keras.models.load_model("C:\\Users\\USER\\Desktop\\Eqraa\\models\\price_classifier.keras")
-scaler = joblib.load("C:\\Users\\USER\\Desktop\\Eqraa\\models\\scaler.pkl")
+model = tf.keras.models.load_model(MODELS_DIR / "price_classifier.keras")
+scaler = joblib.load(MODELS_DIR / "scaler.pkl")
+
 
 
 def predict(new_data):
