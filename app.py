@@ -8,7 +8,7 @@ def main():
         run()
     elif mode == "web":
         from views.web_view import app
-        app.run(debug=True)
+        app.run(host="0.0.0.0", debug=True)
     else:
         print("Usage: python app.py [cli|web]")
 
