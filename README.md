@@ -4,11 +4,22 @@ Predicts a phone's price range (Low / Medium / High / Very high) from its specs,
 using a neural network trained on the Kaggle Mobile Price Classification dataset.
 
 ## Run
+
+### Locally
 - CLI: `python app.py cli`
 - Web: `python app.py web`
 
+### With Docker
+```bash
+docker build -t eqraa .
+docker run -p 5000:5000 eqraa
+```
+Then open `http://localhost:5000` in your browser.
+
+> **Note:** This runs Flask's built-in development server (`debug=True`), which is fine for local use and demos but explicitly not meant for production traffic. A production deployment would swap this for a WSGI server like Gunicorn behind the Flask app.
+
 ## Structure
-emotion_classifier/
+Eqraa/
 
 ├── models/
 
@@ -25,6 +36,10 @@ emotion_classifier/
 │   ├── cli_view.py          # terminal input/output
 
 │   └── web_view.py          # Flask form input/output
+
+├── Dockerfile                # containerizes the app for reproducible builds
+
+├── .dockerignore              # excludes .venv, __pycache__, .git from the image
 
 └── app.py                   # entry point
 
